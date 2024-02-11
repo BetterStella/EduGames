@@ -9,7 +9,6 @@ public class PlayerActions : MonoBehaviour
     public int JumpForce=5;
     public int Speed=5;
     Rigidbody2D rb;
-    [SerializeField] Button jumpButton;
 
     private void Start()
     {
@@ -27,15 +26,10 @@ public class PlayerActions : MonoBehaviour
         MoveDirection = directionGetFromButton;
     }
 
-    //the jump doesnt work :(
     private void Movement()
     {
         MoveDirection = Input.GetAxis("Horizontal");
         rb.velocity = new Vector2(MoveDirection*Speed,0);
-        if (Input.GetButtonDown("jump"))
-        {
-            rb.velocity = new Vector2(rb.velocity.x,JumpForce);
-        }
         if(Input.GetButtonDown("Jump"))
         {
             rb.velocity = new Vector2(rb.velocity.x,JumpForce);
