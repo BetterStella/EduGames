@@ -22,11 +22,12 @@ public class PlayerActions : MonoBehaviour
     private void Movement()
     {
         MoveDirection = Input.GetAxis("Horizontal");
-        rb.velocity = new Vector2(MoveDirection*Speed,0);
+        rb.velocity = new Vector2(MoveDirection*Speed,rb.velocity.y);
         if(Input.GetButtonDown("Jump"))
         {
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y + JumpForce);
         }
+        
     }
     
 
