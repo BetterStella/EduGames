@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CoinController : MonoBehaviour
+public class CoinsController : MonoBehaviour
 {
     int coinCounter = 0;
 
@@ -14,10 +14,15 @@ public class CoinController : MonoBehaviour
     private void IncreaseCounterByValue(int valueToIncrease)
     {
         coinCounter = coinCounter + valueToIncrease;
+        Debug.Log("coins :" + coinCounter);
     }
 
 
 
+
+
+
+    
     public void EachCoinRespond()
     {
         IncreaseCounterByValue(1);

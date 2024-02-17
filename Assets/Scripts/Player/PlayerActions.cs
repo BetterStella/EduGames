@@ -9,6 +9,7 @@ public class PlayerActions : MonoBehaviour
     public int JumpForce=5;
     public int Speed=5;
     Rigidbody2D rb;
+    [SerializeField] GameObject feet;
 
     private void Start()
     {
@@ -25,11 +26,41 @@ public class PlayerActions : MonoBehaviour
         rb.velocity = new Vector2(MoveDirection*Speed,rb.velocity.y);
         if(Input.GetButtonDown("Jump"))
         {
+            Jump();
+        }
+    }
+
+    public void Jump()
+    {
+        if(IsGrounded())
+        { 
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y + JumpForce);
         }
-        
     }
-    
 
-    
+    //TODO - fix isgrounded :)
+    private bool IsGrounded()
+    {
+        /*
+        Debug.Log("i got here");
+        if (feet.transform.position.y - GameObject.FindGameObjectWithTag("Ground").transform.position.y < 0.3)
+        {
+            return true;
+        }
+
+        return false;
+        */
+        return true;
+
+
+    }    
+
+
+
+
+
+
+
+
+
 }
