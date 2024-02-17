@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EachCoinSeperateScript : MonoBehaviour
+public class EachCoinSeperately : MonoBehaviour
 {
     private GameObject CoinController;
     private void Start()

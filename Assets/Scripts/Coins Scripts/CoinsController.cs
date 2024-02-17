@@ -15,7 +15,6 @@ public class CoinsController : MonoBehaviour
     private void IncreaseCounterByValue(int valueToIncrease)
     {
         coinCounter = coinCounter + valueToIncrease;
-        Debug.Log("coins :" + coinCounter);
         coinText.text = coinCounter.ToString();
     }
 
