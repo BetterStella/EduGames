@@ -19,7 +19,6 @@ public class HealthController : MonoBehaviour
 
 
     private int RegularTrapDamage = 1;
-    //TODO - create health bar
 
     private void Start()
     {
