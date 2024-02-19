@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7117745209833595948}
   m_Layer: 0
-  m_Name: BackGround
+  m_Name: BackGround 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -532,7 +532,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.43921572, g: 0.82745105, b: 0.43921572, a: 1}
+  m_Color: {r: 0.4392157, g: 0.52972496, b: 0.827451, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -616,7 +616,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.3647059, g: 0.9568628, b: 0.93725497, a: 1}
+  m_Color: {r: 0.0911622, g: 0.33962262, b: 0.065681726, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

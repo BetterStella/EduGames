@@ -9,6 +9,7 @@ TagManager:
   - CoinsController
   - Ground
   - HealthController
+  - miniGameCube
   layers:
   - Default
   - TransparentFX
