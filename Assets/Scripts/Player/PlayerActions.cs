@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class PlayerActions : MonoBehaviour
@@ -60,6 +61,15 @@ public class PlayerActions : MonoBehaviour
         if(rightButton.GetComponent<MobileMovementButtons>().IsTheButtonBeingPressed() == true)
         {
             MoveDirection = 1;
+        }
+
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            MoveDirection = 1;
+        }
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+             MoveDirection = -1;
         }
 
         if (leftButton.GetComponent<MobileMovementButtons>().IsTheButtonBeingPressed() == true)
