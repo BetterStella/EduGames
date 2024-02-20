@@ -20,13 +20,14 @@ public class PlayerActions : MonoBehaviour
     private void Update()
     {
         Movement();
-        Debug.Log(MoveDirection);
+        //Debug.Log(MoveDirection);
         CheckIfButtonsArePressed();
     }
 
     private void Movement()
     {
-        //MoveDirection = Input.GetAxis("Horizontal");
+        MoveDirection = Input.GetAxis("Horizontal");
+
         rb.velocity = new Vector2(MoveDirection*Speed,rb.velocity.y);
         if(Input.GetButtonDown("Jump"))
         {
@@ -57,22 +58,26 @@ public class PlayerActions : MonoBehaviour
     
     private void CheckIfButtonsArePressed()
     {
-        //bool IsOneOfThemTrue = false;
-        if(rightButton.GetComponent<MobileMovementButtons>().IsTheButtonBeingPressed() == true)
+    
+        //if ()
+        //{
+        //    Debug.Log("right arrow");
+        //    MoveDirection = 1;
+
+        //}
+        //if (Input.GetKeyDown(KeyCode.LeftArrow))
+        //{
+        //    Debug.Log("left arrow");
+
+        //    MoveDirection = -1;
+
+        //}
+
+        if (rightButton.GetComponent<MobileMovementButtons>().IsTheButtonBeingPressed() == true || Input.GetKeyDown(KeyCode.RightArrow))
         {
             MoveDirection = 1;
         }
-
-        if (Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            MoveDirection = 1;
-        }
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-             MoveDirection = -1;
-        }
-
-        if (leftButton.GetComponent<MobileMovementButtons>().IsTheButtonBeingPressed() == true)
+        if (leftButton.GetComponent<MobileMovementButtons>().IsTheButtonBeingPressed() == true || Input.GetKeyDown(KeyCode.RightArrow))
         {
             MoveDirection = -1;
         }
@@ -85,7 +90,6 @@ public class PlayerActions : MonoBehaviour
         {
             MoveDirection = 0;
         }
-
 
         /*
         if(IsOneOfThemTrue)return true;

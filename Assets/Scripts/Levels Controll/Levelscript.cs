@@ -1,18 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Levelscript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public void OpenNextLevel(int levelId)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        string levelName = "Level " + levelId;
+        SceneManager.LoadScene(levelName);
     }
 }
+
+
