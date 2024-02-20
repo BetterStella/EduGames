@@ -17,12 +17,7 @@ public class EndLevel : MonoBehaviour
     [SerializeField]
     private SavedObjects CoinsNo;
 
-    [SerializeField] TextMeshProUGUI CoinText2;
 
-    private void Start()
-    {
-        CoinText2.text = "ניסיון 123";
-    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Debug.Log("who: ");
@@ -47,10 +42,7 @@ public class EndLevel : MonoBehaviour
         else
         {
             SceneManager.LoadScene("End of game");
-            Debug.Log(CoinText2.text);
-
-            CoinText2.text = "ניסיון 123";
-            Debug.Log(CoinsNo.Value);
+          
 
         }
         // 
