@@ -22799,6 +22799,60 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1720961792
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1720961794}
+  - component: {fileID: 1720961793}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1720961793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1720961792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d9f7ccb01b3e46f1a9cea5d9565d67b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mySceneReference:
+    asset: {fileID: 102900000, guid: 192bce72863da431f95f0c4cabf7bed1, type: 3}
+    guid: 192bce72863da431f95f0c4cabf7bed1
+  mySceneReferences:
+  - asset: {fileID: 102900000, guid: 3fc8acdd13e6c734bafef6554d6fdbcd, type: 3}
+    guid: 3fc8acdd13e6c734bafef6554d6fdbcd
+  - asset: {fileID: 102900000, guid: 605a1128ffb0940978989d50a94ce0fc, type: 3}
+    guid: 605a1128ffb0940978989d50a94ce0fc
+  - asset: {fileID: 102900000, guid: a841ff1d130e54a8b93c1ea77c5c63ae, type: 3}
+    guid: a841ff1d130e54a8b93c1ea77c5c63ae
+--- !u!4 &1720961794
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1720961792}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.505236, y: 1.6850041, z: -0.015503016}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1736924908
 GameObject:
   m_ObjectHideFlags: 0
@@ -23943,3 +23997,4 @@ SceneRoots:
   - {fileID: 1285656640}
   - {fileID: 1698426608}
   - {fileID: 39074621}
+  - {fileID: 1720961794}
