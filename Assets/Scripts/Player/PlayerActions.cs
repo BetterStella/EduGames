@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem.XR;
 using UnityEngine.UI;
 
 public class PlayerActions : MonoBehaviour
@@ -59,25 +60,25 @@ public class PlayerActions : MonoBehaviour
     private void CheckIfButtonsArePressed()
     {
     
-        //if ()
-        //{
-        //    Debug.Log("right arrow");
-        //    MoveDirection = 1;
+        if (Input.GetKeyDown(KeyCode.RightArrow) && !IsGrounded())
+        { 
+            Debug.Log("right arrow");
+            MoveDirection = 1;
 
-        //}
-        //if (Input.GetKeyDown(KeyCode.LeftArrow))
-        //{
-        //    Debug.Log("left arrow");
+        }
+        if (Input.GetKeyDown(KeyCode.LeftArrow ) && !IsGrounded())
+        {
+            Debug.Log("left arrow");
 
-        //    MoveDirection = -1;
+            MoveDirection = -1;
 
-        //}
+        }
 
-        if (rightButton.GetComponent<MobileMovementButtons>().IsTheButtonBeingPressed() == true || Input.GetKeyDown(KeyCode.RightArrow))
+        if (rightButton.GetComponent<MobileMovementButtons>().IsTheButtonBeingPressed() == true)
         {
             MoveDirection = 1;
         }
-        if (leftButton.GetComponent<MobileMovementButtons>().IsTheButtonBeingPressed() == true || Input.GetKeyDown(KeyCode.RightArrow))
+        if (leftButton.GetComponent<MobileMovementButtons>().IsTheButtonBeingPressed() == true)
         {
             MoveDirection = -1;
         }

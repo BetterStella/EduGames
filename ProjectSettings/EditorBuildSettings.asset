@@ -9,6 +9,15 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
+    path: Assets/Scenes/Main Menu.unity
+    guid: 192bce72863da431f95f0c4cabf7bed1
+  - enabled: 1
+    path: Assets/Scenes/End of game.unity
+    guid: d33b9833bcef64712940903693ef4d1d
+  - enabled: 1
+    path: Assets/Scenes/End of Level.unity
+    guid: c0cdcdffc896144bc8518a6405fa567e
+  - enabled: 1
     path: Assets/Scenes/Level 1.unity
     guid: 3fc8acdd13e6c734bafef6554d6fdbcd
   - enabled: 1
@@ -18,14 +27,17 @@ EditorBuildSettings:
     path: Assets/Scenes/Level 3.unity
     guid: a841ff1d130e54a8b93c1ea77c5c63ae
   - enabled: 1
-    path: Assets/Scenes/Main Menu.unity
-    guid: 192bce72863da431f95f0c4cabf7bed1
+    path: Assets/Scenes/Level 4.unity
+    guid: cf313a4b0bac2451c9f170814b3cb3de
   - enabled: 1
-    path: Assets/Scenes/End of game.unity
-    guid: d33b9833bcef64712940903693ef4d1d
+    path: Assets/Scenes/Level 5.unity
+    guid: 5ba1988f4571349e5bbec778b750c378
   - enabled: 1
-    path: Assets/Scenes/End of Level.unity
-    guid: c0cdcdffc896144bc8518a6405fa567e
+    path: Assets/Scenes/Mini Games/Mini 1.unity
+    guid: eb6c72a3442aa45118343c50316964de
+  - enabled: 1
+    path: Assets/Scenes/Mini Games/Mini 2.unity
+    guid: 862e576c1b5c54ad3aee11ea14ab57f9
   m_configObjects:
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 48ee843aa05acff449aeb4344826105f, type: 2}
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: 25b72188b0fd34f4397ad867669af4d0, type: 2}

@@ -5,21 +5,21 @@ using TMPro;
 
 public class CoinsController : MonoBehaviour
 {
-    int coinCounter = 0;
+    [SerializeField]
+    private SavedObjects CoinsNo;
     [SerializeField]TextMeshProUGUI coinText;
 
 
-
-
+    private void Start()
+    {
+        coinText.text = CoinsNo.Value.ToString();
+    }
 
     private void IncreaseCounterByValue(int valueToIncrease)
     {
-        coinCounter = coinCounter + valueToIncrease;
-        coinText.text = coinCounter.ToString();
+        CoinsNo.Value += valueToIncrease;
+        coinText.text = CoinsNo.Value.ToString();
     }
-
-
-
 
 
 

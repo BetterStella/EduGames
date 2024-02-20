@@ -835,6 +835,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e44b23b6ccb5cc45abfe57763676853, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CoinsNo: {fileID: 11400000, guid: 458149293644f4c00a70d4d0ab34c64f, type: 2}
   coinText: {fileID: 1246385017}
 --- !u!4 &364185419
 Transform:

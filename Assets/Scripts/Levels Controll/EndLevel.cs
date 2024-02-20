@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using static UnityEditor.Timeline.TimelinePlaybackControls;
 
 public class EndLevel : MonoBehaviour
 {
@@ -12,8 +14,15 @@ public class EndLevel : MonoBehaviour
     [SerializeField]
     private int nextLevel;
 
+    [SerializeField]
+    private SavedObjects CoinsNo;
 
+    [SerializeField] TextMeshProUGUI CoinText2;
 
+    private void Start()
+    {
+        CoinText2.text = "ניסיון 123";
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Debug.Log("who: ");
@@ -38,7 +47,11 @@ public class EndLevel : MonoBehaviour
         else
         {
             SceneManager.LoadScene("End of game");
-            
+            Debug.Log(CoinText2.text);
+
+            CoinText2.text = "ניסיון 123";
+            Debug.Log(CoinsNo.Value);
+
         }
         // 
 
