@@ -12,6 +12,7 @@ public class MiniGames : MonoBehaviour
     [SerializeField]
     private SavedObjects CoinsNo;
 
+
     [SerializeField]
     private int MiniGame;
 
@@ -76,6 +77,7 @@ public class MiniGames : MonoBehaviour
         //Debug.Log(lastLoadedScene);
 
         //SceneManager.UnloadSceneAsync(lastLoadedScene);
+            Debug.Log("name of level: ");
 
             CoinsNo.Value += 20;
             string levelName = "Mini " + MiniGame;

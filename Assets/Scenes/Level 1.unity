@@ -588,7 +588,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3219165553650452060, guid: 0ed57e8f0b048d04896c1d2d485b03da, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -7
+      value: -7.59
       objectReference: {fileID: 0}
     - target: {fileID: 3219165553650452060, guid: 0ed57e8f0b048d04896c1d2d485b03da, type: 3}
       propertyPath: m_LocalPosition.z
@@ -22659,7 +22659,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 699548059}
   CoinsNo: {fileID: 11400000, guid: 458149293644f4c00a70d4d0ab34c64f, type: 2}
-  MiniGame: 2
+  MiniGame: 1
 --- !u!1 &1736924908
 GameObject:
   m_ObjectHideFlags: 0
@@ -23443,8 +23443,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 699548059}
   nextLevel: 4
-  CoinsNo: {fileID: 0}
-  coinText: {fileID: 0}
+  CoinsNo: {fileID: 11400000, guid: 458149293644f4c00a70d4d0ab34c64f, type: 2}
 --- !u!212 &2027158968
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -23506,7 +23505,7 @@ Transform:
   m_GameObject: {fileID: 2027158965}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 38.3, y: 2.4, z: 0}
+  m_LocalPosition: {x: 123.7, y: -2.8, z: 0}
   m_LocalScale: {x: 0.19567, y: 0.19567, z: 0.19567}
   m_ConstrainProportionsScale: 0
   m_Children: []
