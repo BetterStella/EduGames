@@ -1266,7 +1266,7 @@ GameObject:
   - component: {fileID: 513310702}
   - component: {fileID: 513310701}
   m_Layer: 0
-  m_Name: mini1 (4)
+  m_Name: mini4
   m_TagString: miniGameCube
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1286,6 +1286,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 699548059}
   CoinsNo: {fileID: 11400000, guid: 458149293644f4c00a70d4d0ab34c64f, type: 2}
+  minigame: {fileID: 0}
   MiniGame: 4
 --- !u!61 &513310702
 BoxCollider2D:
@@ -2125,7 +2126,7 @@ GameObject:
   - component: {fileID: 656066778}
   - component: {fileID: 656066777}
   m_Layer: 0
-  m_Name: mini1 (1)
+  m_Name: mini5
   m_TagString: miniGameCube
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2145,6 +2146,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 699548059}
   CoinsNo: {fileID: 11400000, guid: 458149293644f4c00a70d4d0ab34c64f, type: 2}
+  minigame: {fileID: 0}
   MiniGame: 5
 --- !u!61 &656066778
 BoxCollider2D:
@@ -2635,7 +2637,7 @@ GameObject:
   - component: {fileID: 850751913}
   - component: {fileID: 850751912}
   m_Layer: 0
-  m_Name: mini1 (2)
+  m_Name: mini2
   m_TagString: miniGameCube
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2655,6 +2657,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 699548059}
   CoinsNo: {fileID: 11400000, guid: 458149293644f4c00a70d4d0ab34c64f, type: 2}
+  minigame: {fileID: 0}
   MiniGame: 2
 --- !u!61 &850751913
 BoxCollider2D:
@@ -23077,7 +23080,7 @@ Transform:
   m_GameObject: {fileID: 1725742318}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 22.2, y: 4.18, z: 0}
+  m_LocalPosition: {x: 5.03, y: 0.04, z: 0}
   m_LocalScale: {x: 0.181805, y: 0.181805, z: 0.36361}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -23097,6 +23100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 699548059}
   CoinsNo: {fileID: 11400000, guid: 458149293644f4c00a70d4d0ab34c64f, type: 2}
+  minigame: {fileID: 0}
   MiniGame: 1
 --- !u!1 &1736924908
 GameObject:
@@ -23692,7 +23696,7 @@ GameObject:
   - component: {fileID: 1948188806}
   - component: {fileID: 1948188805}
   m_Layer: 0
-  m_Name: mini1 (3)
+  m_Name: mini3
   m_TagString: miniGameCube
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23712,6 +23716,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 699548059}
   CoinsNo: {fileID: 11400000, guid: 458149293644f4c00a70d4d0ab34c64f, type: 2}
+  minigame: {fileID: 0}
   MiniGame: 3
 --- !u!61 &1948188806
 BoxCollider2D:

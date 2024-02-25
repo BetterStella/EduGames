@@ -949,7 +949,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   CoinsNo: {fileID: 11400000, guid: 458149293644f4c00a70d4d0ab34c64f, type: 2}
-  MiniGame: 1
+  minigame: {fileID: 0}
+  MiniGame: 2
 --- !u!4 &969794416
 Transform:
   m_ObjectHideFlags: 0

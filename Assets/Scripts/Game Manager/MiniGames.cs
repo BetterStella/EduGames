@@ -12,6 +12,9 @@ public class MiniGames : MonoBehaviour
     [SerializeField]
     private SavedObjects CoinsNo;
 
+    [SerializeField]
+    private GameObject minigame;
+
 
 
     [SerializeField]
@@ -86,11 +89,20 @@ public class MiniGames : MonoBehaviour
             Debug.Log(levelName);
 
             SceneManager.UnloadSceneAsync(levelName);
-            miniController = GameObject.FindGameObjectWithTag("miniGameCube");
 
-            Debug.Log(miniController.name);
+            GameObject[] taggedObjects = GameObject.FindGameObjectsWithTag("miniGameCube");  //Find all GameObjects with specific tag
+        string mini = "mini" + MiniGame;
+            foreach (GameObject go in taggedObjects)  //iterate through all returned objects, and find the one with the correct name
+            {
+            if (go.name == mini)
+            {
+                go.SetActive(false);
 
-            miniController.SetActive(false);
+                break;
+            }
+            }
+
+
 
     }
 }

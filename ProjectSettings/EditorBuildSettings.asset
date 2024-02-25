@@ -37,13 +37,13 @@ EditorBuildSettings:
     guid: eb6c72a3442aa45118343c50316964de
   - enabled: 1
     path: Assets/Scenes/Mini Games/Mini 2.unity
-    guid: 862e576c1b5c54ad3aee11ea14ab57f9
+    guid: 3b2d5a54c50d54885ac16fafaf227d48
   - enabled: 1
     path: Assets/Scenes/Mini Games/Mini 3.unity
-    guid: e072737cfddff40d79fb0c8bd2bedae2
+    guid: 9f4178da991714673b9ebd602c27e113
   - enabled: 1
-    path: Assets/Scenes/Mini Games/Mini 4.unity
-    guid: 6ef999abe10e74340bef9e1ca0e5817e
+    path: Assets/Scenes/Mini Games/Mini 5.unity
+    guid: e2a4ba2c7ce2f4192b4b3e8bf329d0ad
   - enabled: 1
     path: Assets/Scenes/Mini Games/Mini 4.unity
     guid: 75e7bc0b143754600bc07f168d107f34
