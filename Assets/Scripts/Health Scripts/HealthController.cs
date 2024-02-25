@@ -65,4 +65,8 @@ public class HealthController : MonoBehaviour
     {
         TakeDamage(RegularTrapDamage);
     }
+    public void EachDeadlyTrapRespond()
+    {
+        TakeDamage(hp);
+    }
 }
