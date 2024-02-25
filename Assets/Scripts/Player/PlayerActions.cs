@@ -25,7 +25,8 @@ public class PlayerActions : MonoBehaviour
     {
         if(HealthController.GetComponent<HealthController>().IsDead)
         {
-        rb.velocity = Vector3.zero;
+            rb.gravityScale = 0;
+            rb.velocity = Vector3.zero;
         }
         else
         {

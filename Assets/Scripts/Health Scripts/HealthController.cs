@@ -17,6 +17,8 @@ public class HealthController : MonoBehaviour
     [SerializeField] private GameObject Heart5;
     [SerializeField] private Sprite DeadHeart;
 
+    [SerializeField] private GameObject DeadScreen;
+
 
     private int RegularTrapDamage = 1;
 
@@ -45,6 +47,7 @@ public class HealthController : MonoBehaviour
         {
             IsDead = true;
             Debug.Log("dead");
+            ShowDeadScreen();
         }
     }
 
@@ -58,6 +61,10 @@ public class HealthController : MonoBehaviour
             }
         }
     }
+    private void ShowDeadScreen()
+    {
+        DeadScreen.SetActive(true);
+    }
 
 
 
@@ -69,4 +76,5 @@ public class HealthController : MonoBehaviour
     {
         TakeDamage(hp);
     }
+
 }
