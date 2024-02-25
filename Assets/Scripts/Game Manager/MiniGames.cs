@@ -13,6 +13,7 @@ public class MiniGames : MonoBehaviour
     private SavedObjects CoinsNo;
 
 
+
     [SerializeField]
     private int MiniGame;
 

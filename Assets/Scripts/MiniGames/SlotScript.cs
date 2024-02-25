@@ -10,14 +10,27 @@ public class SlotScript : MonoBehaviour, IDropHandler
 {
     [SerializeField]
     private miniGameSO GametoDisplay;
+    [SerializeField]
+    private GameSO ChosenGame;
+
     private GameObject Tmp;
     MiniGames minigamescript;
 
     void Start()
     {
+
         minigamescript = GameObject.FindGameObjectWithTag("minGameFu").GetComponent<MiniGames>();
+        GametoDisplay = ChosenGame.Value;
+        Debug.Log("Slot game to check:" + GametoDisplay);
+        Debug.Log("Slot game to check2:" + ChosenGame.Value);
     }
-    public void OnDrop(PointerEventData eventData)
+
+
+
+
+
+
+public void OnDrop(PointerEventData eventData)
     {
         Debug.Log("OnDrop");
         GameObject droppedObject = eventData.pointerDrag;

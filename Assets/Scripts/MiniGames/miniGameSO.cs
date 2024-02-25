@@ -6,7 +6,7 @@ using UnityEngine;
 public class miniGameSO : ScriptableObject
 {
     [SerializeField]
-    private int _value;
+    private string _value;
     [SerializeField]
     private string _question;
     [SerializeField]
@@ -24,7 +24,7 @@ public class miniGameSO : ScriptableObject
     [SerializeField]
     private string _category;
 
-    public int Value
+    public string Value
     {
         get { return _value;}
         set { _value = value; }
