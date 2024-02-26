@@ -14,6 +14,9 @@ public class PlayerActions : MonoBehaviour
     [SerializeField] GameObject feet;
     [SerializeField]GameObject rightButton, leftButton;
 
+    [SerializeField] Animation runAnimation;
+    [SerializeField] Animation jumpAnimation;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
