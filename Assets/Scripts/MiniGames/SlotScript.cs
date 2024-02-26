@@ -5,13 +5,14 @@ using UnityEngine.EventSystems;
 using TMPro;
 using static Unity.Burst.Intrinsics.X86.Avx;
 
-
+[RequireComponent(typeof(AudioSource))]
 public class SlotScript : MonoBehaviour, IDropHandler
 {
     [SerializeField]
     private miniGameSO GametoDisplay;
     [SerializeField]
     private GameSO ChosenGame;
+    public AudioClip wrong;
 
     private GameObject Tmp;
     MiniGames minigamescript;
@@ -56,9 +57,11 @@ public void OnDrop(PointerEventData eventData)
         else
         {
             Debug.Log("The wrong Answer and to add sound and incoragment");
+            AudioSource.PlayClipAtPoint(wrong, new Vector3(5, 1, 2));
+
 
         }
-       
+
 
     }
 }

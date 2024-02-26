@@ -5,14 +5,15 @@ using UnityEngine.UI;
 using TMPro;
 
 
-
+[RequireComponent(typeof(AudioSource))]
 public class GameDisplay : MonoBehaviour
 {
 
     [SerializeField]
     private OptionsSO GameO;
 
- 
+    public AudioClip wrong;
+
 
     private int agerange;
     private int subject;
@@ -98,6 +99,8 @@ public class GameDisplay : MonoBehaviour
         else
         {
             Debug.Log("Not the right answer" + a);
+            AudioSource.PlayClipAtPoint(wrong, new Vector3(5, 1, 2));
+
 
 
         }
