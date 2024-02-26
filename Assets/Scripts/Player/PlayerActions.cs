@@ -14,27 +14,15 @@ public class PlayerActions : MonoBehaviour
     [SerializeField] GameObject feet;
     [SerializeField]GameObject rightButton, leftButton;
 
-    [SerializeField] GameObject Camera;
-    [SerializeField] GameObject HealthController;
-
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
     }
     private void Update()
     {
-        if(HealthController.GetComponent<HealthController>().IsDead)
-        {
-            rb.gravityScale = 0;
-            rb.velocity = Vector3.zero;
-        }
-        else
-        {
         Movement();
         //Debug.Log(MoveDirection);
         CheckIfButtonsArePressed();
-        }
-        
     }
 
     private void Movement()

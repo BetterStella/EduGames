@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Cinemachine;
 
 public class HealthController : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class HealthController : MonoBehaviour
     [SerializeField] private Sprite DeadHeart;
 
     [SerializeField] private GameObject DeadScreen;
+    [SerializeField] private GameObject Camera;
 
 
     private int RegularTrapDamage = 1;
@@ -48,6 +50,8 @@ public class HealthController : MonoBehaviour
             IsDead = true;
             Debug.Log("dead");
             ShowDeadScreen();
+            //stop camera from moving.
+            StopCameraMovement();
         }
     }
 
@@ -65,6 +69,10 @@ public class HealthController : MonoBehaviour
     {
         DeadScreen.SetActive(true);
     }
+    private void StopCameraMovement()
+    {
+        Camera.gameObject.GetComponent<CinemachineVirtualCamera>().Follow = null;
+    }
 
 
 
@@ -77,4 +85,6 @@ public class HealthController : MonoBehaviour
         TakeDamage(hp);
     }
 
+
+    
 }
