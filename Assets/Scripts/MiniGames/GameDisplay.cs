@@ -98,9 +98,9 @@ public class GameDisplay : MonoBehaviour
         }
         else
         {
+            Button btn = this.transform.GetChild(a).GetComponent<Button>();
             Debug.Log("Not the right answer" + a);
-            AudioSource.PlayClipAtPoint(wrong, new Vector3(5, 1, 2));
-
+            btn.onClick.AddListener(WrongAnswer);
 
 
         }
@@ -111,6 +111,12 @@ public class GameDisplay : MonoBehaviour
         minigamescript.UnloadMiniGame();
 
     }
+
+    void WrongAnswer()
+    {
+        AudioSource.PlayClipAtPoint(wrong, new Vector3(5, 1, 2));
+    }
+
     public void ChooseGame()
     {
         if(game.Count >= 1)
