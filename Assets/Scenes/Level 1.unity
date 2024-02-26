@@ -26291,6 +26291,7 @@ MonoBehaviour:
   player: {fileID: 699548059}
   nextLevel: 2
   CoinsNo: {fileID: 11400000, guid: 458149293644f4c00a70d4d0ab34c64f, type: 2}
+  endlevel: {fileID: 8300000, guid: 7bd6b897eb5ca4b7d88a205c4a51640c, type: 3}
 --- !u!212 &2027158968
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using static UnityEditor.Timeline.TimelinePlaybackControls;
 
+[RequireComponent(typeof(AudioSource))]
 public class EndLevel : MonoBehaviour
 {
     [SerializeField]
@@ -17,6 +18,9 @@ public class EndLevel : MonoBehaviour
     [SerializeField]
     private SavedObjects CoinsNo;
 
+    [SerializeField]
+    private AudioClip endlevel;
+
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -25,7 +29,10 @@ public class EndLevel : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Player"))
         {
+            AudioSource.PlayClipAtPoint(endlevel, new Vector3(5, 1, 2));
+
             Debug.Log("End of level Reached");
+
             OpenNextLevel(nextLevel);
 
         }
