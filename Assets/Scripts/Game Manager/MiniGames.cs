@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using static UnityEditor.Timeline.TimelinePlaybackControls;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class MiniGames : MonoBehaviour
 {
@@ -15,12 +16,21 @@ public class MiniGames : MonoBehaviour
     [SerializeField]
     private GameObject minigame;
 
+    [SerializeField] TextMeshProUGUI coinText;
 
 
     [SerializeField]
     private int MiniGame;
 
     private GameObject miniController;
+
+
+
+    private GameObject CoinController;
+    private void Start()
+    {
+        CoinController = GameObject.FindGameObjectWithTag("CoinsController");
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -83,7 +93,9 @@ public class MiniGames : MonoBehaviour
         //SceneManager.UnloadSceneAsync(lastLoadedScene);
             Debug.Log("name of level: ");
 
-            CoinsNo.Value += 20;
+        //CoinsNo.Value += 20;
+            CoinController.GetComponent<CoinsController>().MiniGameCoinRespond();
+
             string levelName = "Mini " + MiniGame;
             Debug.Log("name of level: ");
             Debug.Log(levelName);
@@ -91,7 +103,7 @@ public class MiniGames : MonoBehaviour
             SceneManager.UnloadSceneAsync(levelName);
 
             GameObject[] taggedObjects = GameObject.FindGameObjectsWithTag("miniGameCube");  //Find all GameObjects with specific tag
-        string mini = "mini" + MiniGame;
+            string mini = "mini" + MiniGame;
             foreach (GameObject go in taggedObjects)  //iterate through all returned objects, and find the one with the correct name
             {
             if (go.name == mini)

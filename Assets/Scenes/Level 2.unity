@@ -2462,7 +2462,7 @@ GameObject:
   - component: {fileID: 646758973}
   - component: {fileID: 646758977}
   m_Layer: 0
-  m_Name: mini2
+  m_Name: mini4
   m_TagString: miniGameCube
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2483,6 +2483,7 @@ MonoBehaviour:
   player: {fileID: 699548059}
   CoinsNo: {fileID: 11400000, guid: 458149293644f4c00a70d4d0ab34c64f, type: 2}
   minigame: {fileID: 0}
+  coinText: {fileID: 1246385017}
   MiniGame: 4
 --- !u!212 &646758975
 SpriteRenderer:
@@ -3975,6 +3976,7 @@ MonoBehaviour:
   player: {fileID: 699548059}
   CoinsNo: {fileID: 11400000, guid: 458149293644f4c00a70d4d0ab34c64f, type: 2}
   minigame: {fileID: 0}
+  coinText: {fileID: 1246385017}
   MiniGame: 5
 --- !u!61 &1032998384
 BoxCollider2D:
@@ -24662,7 +24664,7 @@ GameObject:
   - component: {fileID: 1725742320}
   - component: {fileID: 1725742323}
   m_Layer: 0
-  m_Name: mini1
+  m_Name: mini3
   m_TagString: miniGameCube
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24795,6 +24797,7 @@ MonoBehaviour:
   player: {fileID: 699548059}
   CoinsNo: {fileID: 11400000, guid: 458149293644f4c00a70d4d0ab34c64f, type: 2}
   minigame: {fileID: 0}
+  coinText: {fileID: 1246385017}
   MiniGame: 3
 --- !u!1 &1736924908
 GameObject:

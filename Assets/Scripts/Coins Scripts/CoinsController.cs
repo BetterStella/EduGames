@@ -22,8 +22,12 @@ public class CoinsController : MonoBehaviour
     }
 
 
+    public void MiniGameCoinRespond()
+    {
+        IncreaseCounterByValue(20);
+    }
 
-    
+
     public void EachCoinRespond()
     {
         IncreaseCounterByValue(1);

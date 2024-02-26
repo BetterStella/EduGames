@@ -2483,6 +2483,7 @@ MonoBehaviour:
   player: {fileID: 699548059}
   CoinsNo: {fileID: 11400000, guid: 458149293644f4c00a70d4d0ab34c64f, type: 2}
   minigame: {fileID: 0}
+  coinText: {fileID: 1246385017}
   MiniGame: 2
 --- !u!61 &646758974
 BoxCollider2D:
@@ -3975,6 +3976,7 @@ MonoBehaviour:
   player: {fileID: 699548059}
   CoinsNo: {fileID: 11400000, guid: 458149293644f4c00a70d4d0ab34c64f, type: 2}
   minigame: {fileID: 0}
+  coinText: {fileID: 1246385017}
   MiniGame: 5
 --- !u!61 &1032998384
 BoxCollider2D:
@@ -24795,6 +24797,7 @@ MonoBehaviour:
   player: {fileID: 699548059}
   CoinsNo: {fileID: 11400000, guid: 458149293644f4c00a70d4d0ab34c64f, type: 2}
   minigame: {fileID: 0}
+  coinText: {fileID: 1246385017}
   MiniGame: 1
 --- !u!1 &1736924908
 GameObject:
