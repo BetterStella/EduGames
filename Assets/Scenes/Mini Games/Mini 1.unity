@@ -715,8 +715,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c74230c705f6414aab1915abb3c4d06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GametoDisplay: {fileID: 11400000, guid: 29b7fe07ff56e4a5c9fd7b7275d1e0c6, type: 2}
-  Mini: {fileID: 0}
+  GametoDisplay: {fileID: 0}
+  ChosenGame: {fileID: 11400000, guid: cfe2f33fff3454eb180e34dc48691cec, type: 2}
 --- !u!1 &482493275
 GameObject:
   m_ObjectHideFlags: 0
@@ -806,8 +806,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 630c8a0ef159d4962b785a9dc676ff9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GametoDisplay: {fileID: 11400000, guid: 29b7fe07ff56e4a5c9fd7b7275d1e0c6, type: 2}
+  GameO: {fileID: 11400000, guid: a3d67f35198434639becf9ec38acb13c, type: 2}
+  GameToDisplay: {fileID: 0}
+  ChosenGame: {fileID: 11400000, guid: cfe2f33fff3454eb180e34dc48691cec, type: 2}
+  correctAnswer1: 
+  quiz: 0
   Tmp: {fileID: 0}
+  game:
+  - {fileID: 11400000, guid: 88a4be5cf3fb44a4b98e2108b6e40ecf, type: 2}
+  - {fileID: 11400000, guid: c5626729444e3472b8c4de0e2ef09161, type: 2}
+  - {fileID: 11400000, guid: 29b7fe07ff56e4a5c9fd7b7275d1e0c6, type: 2}
 --- !u!1 &726648829
 GameObject:
   m_ObjectHideFlags: 0
