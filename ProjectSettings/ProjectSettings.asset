@@ -704,11 +704,11 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 2
   windowsGamepadBackendHint: 0
-  cloudProjectId: 61341d5b-f1b7-4ab5-8f17-5014eb81bcdc
+  cloudProjectId: 04aff5d1-62d9-47d4-a3d2-046194ba9129
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: My project (5)
-  organizationId: shirdesign
+  projectName: EduGames
+  organizationId: stela_goal
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}
