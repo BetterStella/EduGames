@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: DragSO3
   m_EditorClassIdentifier: 
   _value: 0
-  _question: Who Invented the lightbulb
+  _question: Who invented the lightbulb?
   _a1: Edison
   _a2: Bell
   _a3: Einstein

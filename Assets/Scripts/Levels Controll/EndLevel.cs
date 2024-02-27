@@ -4,7 +4,6 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using static UnityEditor.Timeline.TimelinePlaybackControls;
 
 [RequireComponent(typeof(AudioSource))]
 public class EndLevel : MonoBehaviour
@@ -20,6 +19,8 @@ public class EndLevel : MonoBehaviour
 
     [SerializeField]
     private AudioClip endlevel;
+    [SerializeField]
+    private AudioSource audioSource;
 
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -29,11 +30,11 @@ public class EndLevel : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Player"))
         {
-            AudioSource.PlayClipAtPoint(endlevel, new Vector3(5, 1, 2));
+            StartCoroutine(ExampleCoroutine());
+
 
             Debug.Log("End of level Reached");
 
-            OpenNextLevel(nextLevel);
 
         }
     }
@@ -68,5 +69,23 @@ public class EndLevel : MonoBehaviour
             }
         }
         return false;
+    }
+
+    IEnumerator ExampleCoroutine()
+    {
+        //Print the time of when the function is first called.
+        Debug.Log("Started Coroutine at timestamp : " + Time.time);
+        //Print the time of when the function is first called.
+        Debug.Log("Started Coroutine at timestamp : " + Time.time);
+        audioSource.clip = endlevel;
+        audioSource.Play();
+        yield return new WaitForSeconds(audioSource.clip.length);
+
+        //After we have waited 5 seconds print the time again.
+        Debug.Log("Finished Coroutine at timestamp : " + Time.time);
+        OpenNextLevel(nextLevel);
+
+        //After we have waited 5 seconds print the time again.
+        Debug.Log("Finished Coroutine at timestamp : " + Time.time);
     }
 }

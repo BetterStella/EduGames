@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: DragSO1
   m_EditorClassIdentifier: 
   _value: 0
-  _question: How much is  5+4
+  _question: How much is  5+4?
   _a1: 1
   _a2: 5
   _a3: 6
