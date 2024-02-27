@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: DragS02
   m_EditorClassIdentifier: 
   _value: 0
-  _question: How much is  20*3
+  _question: How much is  20*3?
   _a1: 60
   _a2: 20
   _a3: 100
