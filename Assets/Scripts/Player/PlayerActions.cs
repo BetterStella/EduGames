@@ -14,12 +14,13 @@ public class PlayerActions : MonoBehaviour
     [SerializeField] GameObject feet;
     [SerializeField]GameObject rightButton, leftButton;
 
-    [SerializeField] Animation runAnimation;
-    [SerializeField] Animation jumpAnimation;
+    private Animator anim;
+
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
     private void Update()
     {
@@ -31,12 +32,14 @@ public class PlayerActions : MonoBehaviour
     private void Movement()
     {
         MoveDirection = Input.GetAxis("Horizontal");
-
+        
         rb.velocity = new Vector2(MoveDirection*Speed,rb.velocity.y);
         if(Input.GetButtonDown("Jump"))
         {
             Jump();
         }
+
+        UpdateAnimation();
     }
 
     public void Jump()
@@ -102,7 +105,23 @@ public class PlayerActions : MonoBehaviour
 
     }
 
-
+    private void UpdateAnimation()
+    {
+        if(MoveDirection > 0)
+        {
+            anim.SetBool("isRunning", true);
+            transform.localScale = new Vector2(1, transform.localScale.y);
+        }
+        if(MoveDirection < 0)
+        {
+            anim.SetBool("isRunning", true);
+            transform.localScale = new Vector2(-1, transform.localScale.y);
+        }
+        if (MoveDirection == 0)
+        {
+            anim.SetBool("isRunning", false);
+        }
+    }
 
 
 }

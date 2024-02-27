@@ -2174,7 +2174,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.6444442, y: 4, z: -10}
+  m_LocalPosition: {x: -1.6450865, y: 4, z: -10}
   m_LocalScale: {x: 1.0574999, y: 1.0464063, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3448,7 +3448,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1, y: 1.3}
+  m_Size: {x: 0.8, y: 1}
   m_Direction: 0
 --- !u!95 &699548066
 Animator:
@@ -4535,7 +4535,7 @@ GameObject:
   - component: {fileID: 1093074475}
   - component: {fileID: 1093074474}
   m_Layer: 5
-  m_Name: DeadScreenBackground
+  m_Name: LoseScreenBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5640,7 +5640,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: You died!
+  m_text: You lost!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
   m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
@@ -6565,7 +6565,7 @@ GameObject:
   - component: {fileID: 1523227759}
   - component: {fileID: 1523227758}
   m_Layer: 5
-  m_Name: DeadScreen
+  m_Name: LoseScreen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26114,7 +26114,7 @@ Transform:
   m_GameObject: {fileID: 1950786379}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.6444442, y: 4, z: -10}
+  m_LocalPosition: {x: -1.6450865, y: 4, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
