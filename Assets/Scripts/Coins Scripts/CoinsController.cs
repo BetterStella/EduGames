@@ -19,7 +19,6 @@ public class CoinsController : MonoBehaviour
 
     private void IncreaseCounterByValue(int valueToIncrease)
     {
-        AudioSource.PlayClipAtPoint(coinsound, new Vector3(5, 1, 2));
 
         CoinsNo.Value += valueToIncrease;
         coinText.text = CoinsNo.Value.ToString();
@@ -34,6 +33,8 @@ public class CoinsController : MonoBehaviour
 
     public void EachCoinRespond()
     {
+        AudioSource.PlayClipAtPoint(coinsound, new Vector3(5, 1, 2));
+
         IncreaseCounterByValue(1);
     }
 
