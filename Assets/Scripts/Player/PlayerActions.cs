@@ -24,21 +24,22 @@ public class PlayerActions : MonoBehaviour
     }
     private void Update()
     {
+        if(CheckIfMobileButtonsAreInUse() == false)
+        {
+        CheckIfPCButtonsArePressed();
+        }
+
         Movement();
         //Debug.Log(MoveDirection);
-        CheckIfButtonsArePressed();
     }
 
     private void Movement()
     {
-        MoveDirection = Input.GetAxis("Horizontal");
-        
         rb.velocity = new Vector2(MoveDirection*Speed,rb.velocity.y);
         if(Input.GetButtonDown("Jump"))
         {
             Jump();
         }
-
         UpdateAnimation();
     }
 
@@ -63,47 +64,55 @@ public class PlayerActions : MonoBehaviour
 
     }
     
-    private void CheckIfButtonsArePressed()
-    {
-    
+    private void CheckIfPCButtonsArePressed()
+    { 
+        
         if (Input.GetKeyDown(KeyCode.RightArrow) && !IsGrounded())
         { 
             Debug.Log("right arrow");
             MoveDirection = 1;
-
         }
         if (Input.GetKeyDown(KeyCode.LeftArrow ) && !IsGrounded())
         {
             Debug.Log("left arrow");
 
             MoveDirection = -1;
-
         }
+        
+        MoveDirection = Input.GetAxis("Horizontal");
+    }
 
+
+    //check if buttons are pressed, and also put value in movediraction.
+    private bool CheckIfMobileButtonsAreInUse()
+    {
         if (rightButton.GetComponent<MobileMovementButtons>().IsTheButtonBeingPressed() == true)
         {
             MoveDirection = 1;
+            return true;
+
         }
         if (leftButton.GetComponent<MobileMovementButtons>().IsTheButtonBeingPressed() == true)
         {
             MoveDirection = -1;
+            return true;
         }
 
         if (rightButton.GetComponent<MobileMovementButtons>().IsTheButtonBeingPressed() && leftButton.GetComponent<MobileMovementButtons>().IsTheButtonBeingPressed())
         {
             MoveDirection = 0;
+            return true;
         }
-        if (rightButton.GetComponent<MobileMovementButtons>().IsTheButtonBeingPressed()==false && leftButton.GetComponent<MobileMovementButtons>().IsTheButtonBeingPressed()== false)
+        if (rightButton.GetComponent<MobileMovementButtons>().IsTheButtonBeingPressed() == false && leftButton.GetComponent<MobileMovementButtons>().IsTheButtonBeingPressed() == false)
         {
             MoveDirection = 0;
+            return false;
         }
 
-        /*
-        if(IsOneOfThemTrue)return true;
-        else return false;
-        */
-
+        return false;
     }
+
+    
 
     private void UpdateAnimation()
     {
@@ -122,6 +131,8 @@ public class PlayerActions : MonoBehaviour
             anim.SetBool("isRunning", false);
         }
     }
+
+
 
 
 }
