@@ -44058,7 +44058,7 @@ MonoBehaviour:
   nextLevel: 3
   CoinsNo: {fileID: 11400000, guid: 458149293644f4c00a70d4d0ab34c64f, type: 2}
   endlevel: {fileID: 8300000, guid: 7478151cf36724a7dada558f746c3633, type: 3}
-  audioSource: {fileID: 0}
+  audioSource: {fileID: 2027158971}
 --- !u!212 &2027158968
 SpriteRenderer:
   m_ObjectHideFlags: 0
