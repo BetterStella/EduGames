@@ -20,6 +20,7 @@ public class HealthController : MonoBehaviour
 
     [SerializeField] private GameObject DeadScreen;
     [SerializeField] private GameObject Camera;
+    [SerializeField] private AudioSource LoseAudio;
 
 
     private int RegularTrapDamage = 1;
@@ -68,6 +69,7 @@ public class HealthController : MonoBehaviour
     private void ShowDeadScreen()
     {
         DeadScreen.SetActive(true);
+        LoseAudio.Play();
     }
     private void StopCameraMovement()
     {

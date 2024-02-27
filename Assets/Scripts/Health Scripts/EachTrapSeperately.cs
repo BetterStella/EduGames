@@ -37,6 +37,7 @@ public class EachTrapSeperately : MonoBehaviour
     {
         int shockWaveForce = 6;
         Rigidbody2D rb = Player.GetComponent<Rigidbody2D>();
+        HurtRespondAudio.Play();
 
         rb.velocity = new Vector2(rb.velocity.x, shockWaveForce);
         //play hurt animation for player???? but it shouldnt really be here
