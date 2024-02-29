@@ -5,14 +5,14 @@ using UnityEngine.UI;
 using TMPro;
 
 
-[RequireComponent(typeof(AudioSource))]
 public class GameDisplay : MonoBehaviour
 {
 
     [SerializeField]
     private OptionsSO GameO;
 
-    public AudioClip wrong;
+    [SerializeField] private AudioSource  wrong;
+    [SerializeField] private AudioSource  success;
 
 
     private int agerange;
@@ -107,14 +107,16 @@ public class GameDisplay : MonoBehaviour
     }
 
     void TaskOnClick() {
-        Debug.Log("to unload the game");
-        minigamescript.UnloadMiniGame();
+
+        StartCoroutine(ExampleCoroutine());
+
+       
 
     }
 
     void WrongAnswer()
     {
-        AudioSource.PlayClipAtPoint(wrong, new Vector3(5, 1, 2));
+        wrong.Play();
     }
 
     public void ChooseGame()
@@ -191,5 +193,18 @@ public class GameDisplay : MonoBehaviour
         }
     }
    
+    IEnumerator ExampleCoroutine()
+        {
+    
+        //Print the time of when the function is first called.
+        Debug.Log("Started Coroutine at timestamp : " + Time.time);
+        success.Play();
+        yield return new WaitForSeconds(success.clip.length);
+       
+        //After we have waited 5 seconds print the time again.
+        Debug.Log("Finished Coroutine at timestamp : " + Time.time);
 
+        Debug.Log("to unload the game");
+        minigamescript.UnloadMiniGame();
+        }
 }

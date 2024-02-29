@@ -5,7 +5,6 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-[RequireComponent(typeof(AudioSource))]
 public class EndLevel : MonoBehaviour
 {
     [SerializeField]
@@ -17,10 +16,7 @@ public class EndLevel : MonoBehaviour
     [SerializeField]
     private SavedObjects CoinsNo;
 
-    [SerializeField]
-    private AudioClip endlevel;
-    [SerializeField]
-    private AudioSource audioSource;
+   [SerializeField] private AudioSource endlevel;
 
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -73,19 +69,16 @@ public class EndLevel : MonoBehaviour
 
     IEnumerator ExampleCoroutine()
     {
+
         //Print the time of when the function is first called.
         Debug.Log("Started Coroutine at timestamp : " + Time.time);
-        //Print the time of when the function is first called.
-        Debug.Log("Started Coroutine at timestamp : " + Time.time);
-        audioSource.clip = endlevel;
-        audioSource.Play();
-        yield return new WaitForSeconds(audioSource.clip.length);
+        endlevel.Play();
+        yield return new WaitForSeconds(endlevel.clip.length);
 
         //After we have waited 5 seconds print the time again.
         Debug.Log("Finished Coroutine at timestamp : " + Time.time);
         OpenNextLevel(nextLevel);
 
-        //After we have waited 5 seconds print the time again.
-        Debug.Log("Finished Coroutine at timestamp : " + Time.time);
+       
     }
 }

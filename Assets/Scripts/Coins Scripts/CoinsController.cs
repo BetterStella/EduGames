@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-[RequireComponent(typeof(AudioSource))]
 public class CoinsController : MonoBehaviour
 {
     [SerializeField]
     private SavedObjects CoinsNo;
     [SerializeField]TextMeshProUGUI coinText;
 
-    public AudioClip coinsound;
+
+    [SerializeField] private AudioSource coinsound;
+
 
     private void Start()
     {
@@ -33,7 +34,7 @@ public class CoinsController : MonoBehaviour
 
     public void EachCoinRespond()
     {
-        AudioSource.PlayClipAtPoint(coinsound, new Vector3(5, 1, 2));
+        coinsound.Play();
 
         IncreaseCounterByValue(1);
     }

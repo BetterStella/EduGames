@@ -5,14 +5,14 @@ using UnityEngine.EventSystems;
 using TMPro;
 using static Unity.Burst.Intrinsics.X86.Avx;
 
-[RequireComponent(typeof(AudioSource))]
 public class SlotScript : MonoBehaviour, IDropHandler
 {
     [SerializeField]
     private miniGameSO GametoDisplay;
     [SerializeField]
     private GameSO ChosenGame;
-    public AudioClip wrong;
+    [SerializeField] private AudioSource wrong;
+    [SerializeField] private AudioSource success;
 
     private GameObject Tmp;
     MiniGames minigamescript;
@@ -50,18 +50,32 @@ public void OnDrop(PointerEventData eventData)
                 eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
             }
 
-            minigamescript.UnloadMiniGame();
+            StartCoroutine(ExampleCoroutine());
+
 
 
         }
         else
         {
             Debug.Log("The wrong Answer and to add sound and incoragment");
-            AudioSource.PlayClipAtPoint(wrong, new Vector3(5, 1, 2));
+            wrong.Play();
 
 
         }
 
 
+        
     }
+    IEnumerator ExampleCoroutine()
+        {
+    
+        //Print the time of when the function is first called.
+        Debug.Log("Started Coroutine at timestamp : " + Time.time);
+        success.Play();
+        yield return new WaitForSeconds(success.clip.length);
+        minigamescript.UnloadMiniGame();
+
+        //After we have waited 5 seconds print the time again.
+        Debug.Log("Finished Coroutine at timestamp : " + Time.time);
+        }
 }

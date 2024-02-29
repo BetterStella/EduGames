@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
 
-[RequireComponent(typeof(AudioSource))]
 public class MiniGames : MonoBehaviour
 {
     [SerializeField]
@@ -23,8 +22,6 @@ public class MiniGames : MonoBehaviour
     private int MiniGame;
 
     private GameObject miniController;
-
-    public AudioClip success;
 
 
     private GameObject CoinController;
@@ -90,7 +87,7 @@ public class MiniGames : MonoBehaviour
         //// Get last Scene by index in all loaded Scenes
         //var lastLoadedScene = SceneManager.GetSceneAt(lastSceneIndex);
         //Debug.Log(lastLoadedScene);
-            AudioSource.PlayClipAtPoint(success, new Vector3(5, 1, 2));
+      
 
             //SceneManager.UnloadSceneAsync(lastLoadedScene);
             Debug.Log("name of level: ");
@@ -119,4 +116,6 @@ public class MiniGames : MonoBehaviour
 
 
     }
+
+   
 }
