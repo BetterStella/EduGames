@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using static UnityEditor.Timeline.TimelinePlaybackControls;
 
 
 public class GameDisplay : MonoBehaviour
@@ -34,8 +35,11 @@ public class GameDisplay : MonoBehaviour
     [SerializeField]
     private bool quiz;
 
+    int score = 20;
 
     public GameObject Tmp;
+
+    [SerializeField] TextMeshProUGUI scoreText;
 
 
     [SerializeField]
@@ -83,39 +87,54 @@ public class GameDisplay : MonoBehaviour
         Tmp.GetComponent<TextMeshProUGUI>().text = GameToDisplay.Question;
 
         minigamescript = GameObject.FindGameObjectWithTag("minGameFu").GetComponent<MiniGames>();
+        scoreText.text = score.ToString();
+
 
     }
 
     public void correctAnswer(GameObject Tmp, int a)
     {
+
         correctAnswer1 = GameToDisplay.CA;
         if (Tmp.GetComponent<TextMeshProUGUI>().text == correctAnswer1)
         {
             Debug.Log("This is the right answer" + a);
             Button btn = this.transform.GetChild(a).GetComponent<Button>();
             btn.onClick.AddListener(TaskOnClick);
-
+         
         }
         else
         {
             Button btn = this.transform.GetChild(a).GetComponent<Button>();
             Debug.Log("Not the right answer" + a);
             btn.onClick.AddListener(WrongAnswer);
+         
+
 
 
         }
+
+    
+
     }
 
+
     void TaskOnClick() {
+        score += 5;
+        scoreText.text = score.ToString();
+        StartCoroutine(ExampleCoroutine(score));
+        Debug.Log("Score" + score);
 
-        StartCoroutine(ExampleCoroutine());
 
-       
 
     }
 
     void WrongAnswer()
     {
+
+        score -= 5;
+        scoreText.text = score.ToString();
+        Debug.Log("Score" + score);
         wrong.Play();
     }
 
@@ -193,7 +212,7 @@ public class GameDisplay : MonoBehaviour
         }
     }
    
-    IEnumerator ExampleCoroutine()
+    IEnumerator ExampleCoroutine(int score)
         {
     
         //Print the time of when the function is first called.
@@ -205,6 +224,6 @@ public class GameDisplay : MonoBehaviour
         Debug.Log("Finished Coroutine at timestamp : " + Time.time);
 
         Debug.Log("to unload the game");
-        minigamescript.UnloadMiniGame();
+        minigamescript.UnloadMiniGame(score);
         }
 }

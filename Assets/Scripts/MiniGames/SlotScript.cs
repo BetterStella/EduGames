@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using TMPro;
 using static Unity.Burst.Intrinsics.X86.Avx;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class SlotScript : MonoBehaviour, IDropHandler
 {
@@ -13,9 +14,11 @@ public class SlotScript : MonoBehaviour, IDropHandler
     private GameSO ChosenGame;
     [SerializeField] private AudioSource wrong;
     [SerializeField] private AudioSource success;
-
+    int score = 20;
     private GameObject Tmp;
     MiniGames minigamescript;
+    [SerializeField] TextMeshProUGUI scoreText;
+
 
     void Start()
     {
@@ -24,6 +27,10 @@ public class SlotScript : MonoBehaviour, IDropHandler
         GametoDisplay = ChosenGame.Value;
         Debug.Log("Slot game to check:" + GametoDisplay);
         Debug.Log("Slot game to check2:" + ChosenGame.Value);
+        Debug.Log("Score:" + score);
+
+
+
     }
 
 
@@ -31,7 +38,7 @@ public class SlotScript : MonoBehaviour, IDropHandler
 
 
 
-public void OnDrop(PointerEventData eventData)
+    public void OnDrop(PointerEventData eventData)
     {
         Debug.Log("OnDrop");
         GameObject droppedObject = eventData.pointerDrag;
@@ -49,8 +56,10 @@ public void OnDrop(PointerEventData eventData)
             {
                 eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
             }
+            score += 5;
+            scoreText.text = score.ToString();
 
-            StartCoroutine(ExampleCoroutine());
+            StartCoroutine(ExampleCoroutine(score));
 
 
 
@@ -58,22 +67,23 @@ public void OnDrop(PointerEventData eventData)
         else
         {
             Debug.Log("The wrong Answer and to add sound and incoragment");
+            score -= 5;
+            scoreText.text = score.ToString();
+
             wrong.Play();
-
-
         }
 
 
         
     }
-    IEnumerator ExampleCoroutine()
+    IEnumerator ExampleCoroutine(int score)
         {
     
         //Print the time of when the function is first called.
         Debug.Log("Started Coroutine at timestamp : " + Time.time);
         success.Play();
         yield return new WaitForSeconds(success.clip.length);
-        minigamescript.UnloadMiniGame();
+        minigamescript.UnloadMiniGame(score);
 
         //After we have waited 5 seconds print the time again.
         Debug.Log("Finished Coroutine at timestamp : " + Time.time);

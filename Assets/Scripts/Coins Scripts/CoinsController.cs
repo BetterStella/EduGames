@@ -26,18 +26,16 @@ public class CoinsController : MonoBehaviour
     }
 
 
-    public void MiniGameCoinRespond()
+    public void MiniGameCoinRespond(int score)
     {
-        IncreaseCounterByValue(20);
+        IncreaseCounterByValue(score);
     }
 
 
     public void EachCoinRespond()
     {
         coinsound.Play();
-
         IncreaseCounterByValue(1);
     }
-
 
 }

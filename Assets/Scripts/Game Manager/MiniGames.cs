@@ -17,7 +17,10 @@ public class MiniGames : MonoBehaviour
 
     [SerializeField] TextMeshProUGUI coinText;
 
+    [SerializeField] TextMeshProUGUI scoreText;
 
+    int score = 20;
+    
     [SerializeField]
     private int MiniGame;
 
@@ -28,6 +31,7 @@ public class MiniGames : MonoBehaviour
     private void Start()
     {
         CoinController = GameObject.FindGameObjectWithTag("CoinsController");
+
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -75,7 +79,7 @@ public class MiniGames : MonoBehaviour
     }
 
 
-    public void UnloadMiniGame()
+    public void UnloadMiniGame(int score)
         {
 
         //// Get count of loaded Scenes and last index
@@ -93,7 +97,7 @@ public class MiniGames : MonoBehaviour
             Debug.Log("name of level: ");
 
             //CoinsNo.Value += 20;
-            CoinController.GetComponent<CoinsController>().MiniGameCoinRespond();
+            CoinController.GetComponent<CoinsController>().MiniGameCoinRespond(score);
 
             string levelName = "Mini " + MiniGame;
             Debug.Log("name of level: ");

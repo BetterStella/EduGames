@@ -11,6 +11,7 @@ TagManager:
   - HealthController
   - miniGameCube
   - minGameFu
+  - score
   layers:
   - Default
   - TransparentFX
