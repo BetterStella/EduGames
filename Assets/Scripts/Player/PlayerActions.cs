@@ -8,13 +8,15 @@ using UnityEngine.UI;
 public class PlayerActions : MonoBehaviour
 {
     private float MoveDirection;
-    public int JumpForce=5;
-    public int Speed=5;
+    public int JumpForce = 5;
+    public int Speed = 5;
     Rigidbody2D rb;
     [SerializeField] GameObject feet;
-    [SerializeField]GameObject rightButton, leftButton;
+    [SerializeField] GameObject rightButton, leftButton;
 
     private Animator anim;
+
+    [SerializeField] private bool IsGrounded = true;
 
 
     private void Start()
@@ -24,9 +26,9 @@ public class PlayerActions : MonoBehaviour
     }
     private void Update()
     {
-        if(CheckIfMobileButtonsAreInUse() == false)
+        if (CheckIfMobileButtonsAreInUse() == false)
         {
-        CheckIfPCButtonsArePressed();
+            CheckIfPCButtonsArePressed();
         }
 
         Movement();
@@ -35,8 +37,8 @@ public class PlayerActions : MonoBehaviour
 
     private void Movement()
     {
-        rb.velocity = new Vector2(MoveDirection*Speed,rb.velocity.y);
-        if(Input.GetButtonDown("Jump"))
+        rb.velocity = new Vector2(MoveDirection * Speed, rb.velocity.y);
+        if (Input.GetButtonDown("Jump"))
         {
             Jump();
         }
@@ -45,40 +47,27 @@ public class PlayerActions : MonoBehaviour
 
     public void Jump()
     {
-        if(IsGrounded())
-        { 
+        if (IsGrounded)
+        {
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y + JumpForce);
         }
     }
 
-    //TODO - fix isgrounded :)
-    private bool IsGrounded()
+    private void CheckIfPCButtonsArePressed()
     {
 
-        if(rb.velocity.y  == 0)
+        if (Input.GetKeyDown(KeyCode.RightArrow) && !IsGrounded)
         {
-            return true;
-        }
-
-        return false;
-
-    }
-    
-    private void CheckIfPCButtonsArePressed()
-    { 
-        
-        if (Input.GetKeyDown(KeyCode.RightArrow) && !IsGrounded())
-        { 
             Debug.Log("right arrow");
             MoveDirection = 1;
         }
-        if (Input.GetKeyDown(KeyCode.LeftArrow ) && !IsGrounded())
+        if (Input.GetKeyDown(KeyCode.LeftArrow) && !IsGrounded)
         {
             Debug.Log("left arrow");
 
             MoveDirection = -1;
         }
-        
+
         MoveDirection = Input.GetAxis("Horizontal");
     }
 
@@ -112,16 +101,16 @@ public class PlayerActions : MonoBehaviour
         return false;
     }
 
-    
+
 
     private void UpdateAnimation()
     {
-        if(MoveDirection > 0)
+        if (MoveDirection > 0)
         {
             anim.SetBool("isRunning", true);
             transform.localScale = new Vector2(1, transform.localScale.y);
         }
-        if(MoveDirection < 0)
+        if (MoveDirection < 0)
         {
             anim.SetBool("isRunning", true);
             transform.localScale = new Vector2(-1, transform.localScale.y);
@@ -132,7 +121,20 @@ public class PlayerActions : MonoBehaviour
         }
     }
 
-
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            IsGrounded = true;
+        }
+    }
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            IsGrounded = false;
+        }
+    }
 
 
 }
